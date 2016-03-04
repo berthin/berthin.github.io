@@ -4,8 +4,15 @@ title:  "Dicas IC/UNICAMP for dummies!"
 date:   2016-03-04 16:41:13 -0500
 categories: ic-unicamp
 ---
-# Dicas IC/UNICAMP for dummies
-## Selección de disciplinas:
+
+## Contenido:
+* [Seleccion de disciplinas](#seleccion-disciplinas)
+* [Bolsa CAPES](#bolsa-capes)
+* [Moradia](#moradia)
+* [Tramites RNE y otros](#tramites)
+* [Links importantes](#links-importantes)
+
+## Selección de disciplinas:<a id="seleccion-disciplinas"></a> 
 * Elijan con sabiduría. Cada uno debe de conocerse y tener presente que algunos cursos son difíciles y otros fáciles. Saber combinar es buena idea, por semestre, recomendaría llevar algún curso importante (difícil) y otros que son relativamente normales.
 * Un dato interesante es el hecho de que se pueden matricular en todas las disciplinas que gusten. Pasado un tiempo de X semanas deben de desmatricularse de los cursos que no llevaran, y pasado un tiempo de Y semanas, pueden trancar algun curso en el cual ya no tengan esperanzas de aprobar. La diferencia es que al trancar aparecera en su historico, pero al desmatricularse no. Por lo que, recomiendo matriculense a los cursos que quieran y tengan dudas, asistan y luego elijan los que realmente llevaran.
 * Comenten con sus orientadores. No cometan el error de, una vez tengan orientador, olvidarse de su opinión. Los orientadores a veces pueda que les pidan que lleven ciertos cursos, no es nada raro. También deben de saber “negociar”, sean sinceros con sus orientadores y díganles sus intereses y capacidades.
@@ -31,7 +38,7 @@ Examen de ingles. No olvidarse de dar este examen. Solo se da 1 vez por semestre
                 A+C
                 ```
 
-## Bolsa Capes/CNPq:
+## Bolsa Capes/CNPq: <a id="bolsa-capes"></a>
 * La bolsa, si es que ustedes están en la lista de los primeros, caerá a inicios de Abril (considerando q hayan ingresado en Febrero). Su duración es de 2 años maestría, y 4 doctorado. No se puede ampliar, ni pausar.
 * Para mantener la bolsa es importante lo siguiente:
     * Abrir una cuenta en el Banco do Brasil. Hay ciertos requisitos para esto. 
@@ -45,7 +52,7 @@ Examen de ingles. No olvidarse de dar este examen. Solo se da 1 vez por semestre
         CR = Sum(creditos x nota) / Sum(creditos)
         ```
         
-## Moradia:
+## Moradia: <a id="moradia"></a>
 * Pueden encontrar básicamente siguientes tipos de moradas:
     * Kitnet. Cuarto solo con baño y cocina propia.
     * Pensionato. Una casa donde los dueños alquilan cuartos. Tiene reglas, deben de consultar por ellas antes de hacer el contrato. Por ejemplo: una regla puede ser que la entrada a la casa es máximo hasta las 10pm, pero hay cursos que pueden acabar a las 11pm.
@@ -54,12 +61,12 @@ Examen de ingles. No olvidarse de dar este examen. Solo se da 1 vez por semestre
 * Contrato. Generalmente, todos piden un contrato simple.
 * Pago por adelantado. Algunos piden boletos bancarios por todo el periodo de alquiler, otros piden adelanto de X meses (X>=2).
 * Es altamente recomendable conseguir un lugar para quedarse antes de llegar. No es fácil llegar a lo mochilero y luego pensar q con un par de horas buscando encontraran alojamiento.
-* Ver [links importantes](##Links-imporantes:) para saber donde buscar alojamiento.
+* Ver [links importantes](#links-importantes) para saber donde buscar alojamiento.
 
-## Trámites de RNE y otros:
+## Trámites de RNE y otros: <a id="tramites"></a>
 * Consultar la siguiente pagina: http://www.ukuko.com/. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
 
-## Links importantes:
+## Links importantes: <a id="links-importantes"></a>
 * Para moradas:
     * [Morar Unicamp](http://morarunicamp.com.br/)
     * [Grupo Fb Republicas Unicamp](https://www.facebook.com/groups/repsunicamp/)
