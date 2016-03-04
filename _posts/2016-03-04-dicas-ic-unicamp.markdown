@@ -56,7 +56,7 @@ Examen de ingles. No olvidarse de dar este examen. Solo se da 1 vez por semestre
 * Pueden encontrar básicamente siguientes tipos de moradas:
     * Kitnet. Cuarto solo con baño y cocina propia.
     * Pensionato. Una casa donde los dueños alquilan cuartos. Tiene reglas, deben de consultar por ellas antes de hacer el contrato. Por ejemplo: una regla puede ser que la entrada a la casa es máximo hasta las 10pm, pero hay cursos que pueden acabar a las 11pm.
-    * Republica. Casa alquila por estudiantes. Son mas liberales, 
+    * Republica. Casa alquila por estudiantes. Son mas ~~liberales~~ libres, 
     * Morada/Posada. Generalmente para personas que estarán algunos días de visita. Dado que en los 3 anteriores los contratos se hacen por tiempos superiores a 6 meses (generalmente 1 año, aunque hay excepciones), las moradas representan una buena opción para los visitantes, sin embargo son un poco caros (50-60 reales por día).
 * Contrato. Generalmente, todos piden un contrato simple.
 * Pago por adelantado. Algunos piden boletos bancarios por todo el periodo de alquiler, otros piden adelanto de X meses (X>=2).
