@@ -19,6 +19,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * [Tramites RNE y otros](#tramites)
 * [Links importantes](#links-importantes)
 
+
 ## Selección de disciplinas:<a id="seleccion-disciplinas"></a> 
 * Elijan con sabiduría. Cada uno debe de conocerse y tener presente que algunos cursos son difíciles y otros fáciles. Saber combinar es buena idea, por semestre, recomendaría llevar algún curso importante (difícil) y otros que son relativamente normales.
 * Un dato interesante es el hecho de que se pueden matricular en todas las disciplinas que gusten. Pasado un tiempo de X semanas deben de desmatricularse de los cursos que no llevarán, y pasado un tiempo de Y semanas, pueden trancar algun curso en el cual ya no tengan esperanzas de aprobar. La diferencia es que al trancar, el curso aparecerá en su histórico, pero al desmatricularse no. Por lo que, recomiendo matricúlense a los cursos que quieran y si tienen dudas, asistan y luego elijan los que realmente llevarán.
@@ -55,10 +56,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
     * Pasaporte.
     * RNE.
 * La bolsa no es fija, es decir, pueden perderla si es que su CR es menor a 3.33 (considerando el sistema de calificación de las disciplinas como A=4, B=3, C=2, D=1, E=0).
-* Calcular tu CR:
-        ```
-        CR = Sum(creditos x nota) / Sum(creditos)
-        ```
+* Calcular tu CR: $$ \displaystyle CR = \frac{ \sum{ (creditos~  \times ~ nota )}}{\sum{creditos}} $$
         
 ## Moradia: <a id="moradia"></a>
 * Pueden encontrar básicamente siguientes tipos de moradas:
