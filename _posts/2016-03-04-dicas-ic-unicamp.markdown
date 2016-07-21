@@ -84,4 +84,6 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
   * [Normas y reglas del IC-UNICAMP](http://www.ic.unicamp.br/node/1366)
   * [Información sobre disciplinas](http://www.ic.unicamp.br/pos/disciplinas)
 * Otras preguntas:
-    * [Grupo Fb IC en Español](https://www.facebook.com/groups/482184358537768/)
+  * [Grupo Fb IC en Español](https://www.facebook.com/groups/482184358537768/)
+* Acceso a software por convenio UNICAMP-Microsoft
+  * [Only for IC, FEEC](https://lms.lab.ic.unicamp.br/)
