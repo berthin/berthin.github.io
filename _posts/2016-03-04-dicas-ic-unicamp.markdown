@@ -48,7 +48,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
                 ```
 
 ## Bolsa Capes/CNPq: <a id="bolsa-capes"></a>
-* La bolsa, si es que ustedes están en la lista de los primeros, caerá a inicios de Abril (considerando q hayan ingresado en Febrero). Su duración es de 2 años maestría, y 4 doctorado. No se puede ampliar, ni pausar.
+* La bolsa, si es que ustedes están en la lista de los primeros, caerá a inicios de Abril (considerando q hayan ingresado en Febrero). Su duración es de 3 años maestría, y 4 doctorado. No se puede ampliar, ni pausar.
 * Para tener la bolsa es importante conseguir una cuenta en el Banco do Brasil, para ello pedirán lo siguiente:
     * Abrir una cuenta en el Banco do Brasil. Hay ciertos requisitos para esto. 
     * Carta del IC.
