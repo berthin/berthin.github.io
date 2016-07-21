@@ -3,7 +3,7 @@ layout: post
 title:  "X CusContest"
 date:   2016-07-21 12:36:13 -0500
 categories: cuscontest
-edit_link: 2016-07-21-cuscontest.markdown
+edit_link: 2016-07-21-xcuscontest.markdown
 ---
 # Problem Set 
 
