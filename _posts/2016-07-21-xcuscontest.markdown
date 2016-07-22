@@ -78,7 +78,7 @@ edit_link: 2016-07-21-xcuscontest.markdown
 
 
 ### Problem A. Horarios <a id="Problem-A"/>
-* Sea $$ H = \lbrace (t_{o_1}, t_{f_1}), (t_{o_2}, t_{f_2}), \dots (t_{o_N}, t_{f_N}) \rbrace $$ un conjunto indicando los horarios de $$ N $$ cursos tal que: $$ (t_{o_p}, t_{f_p}) $$ indica el tiempo de inicio y tiempo fin para el $$ p $$-ésimo curso ($$ 1 \leq k \leq N $$). Nos piden obtener el máximo intérvalo libre entre cursos ($$ t_{libre} $$) y el máximo intérvalo consecutivo de cursos ($$ t_{ocupado}$$).
+* Sea $$ H = \lbrace (t_{o_1}, t_{f_1}), (t_{o_2}, t_{f_2}), \dots (t_{o_N}, t_{f_N}) \rbrace $$ un conjunto indicando los horarios de $$ N $$ cursos tal que: $$ (t_{o_p}, t_{f_p}) $$ indica el tiempo de inicio y tiempo fin para el $$ p $$-ésimo curso ($$ 1 \leq p \leq N $$). Nos piden obtener el máximo intérvalo libre entre cursos ($$ t_{libre} $$) y el máximo intérvalo consecutivo de cursos ($$ t_{ocupado}$$).
 * Por conveniencia, vamos a definir que $$ H $$ es un conjunto ordenado crecientemente considerando que $$ (t_{o_p}, t_{f_p}) <= (t_{o_q}, t_{f_q}) $$ si $$ t_{o_p} \leq t_{o_q} \wedge t_{o_q} \leq t_{f_p} $$ para todo $$ 1 \leq p < q \leq N $$.
 * Suponiendo que no hay intersección entre los horarios, es decir $$t_{f_p} < t_{o_q}$$, la respuesta sería:
 
@@ -123,7 +123,7 @@ for iT in xrange(T):
   # Inicializar Ĥ como H2
   H2 = []
   # El caso base indica que H2 estará formado por al meno el primer curso en H
-  append(H[0])
+  H2.append(H[0])
   # Iterar sobre el resto de cursos (desde el índice 1 al N-1) e intentar
   # combinar los horarios de los cursos cuando sea posible 
   for (t_o, t_f) in H[1:]:
@@ -177,8 +177,104 @@ for iT in xrange(T):
 
 ### Problem F. <a id="Problem-F"/>
 
-### Problem G. <a id="Problem-G"/>
+### Problem G. El viaje de Adam <a id="Problem-G"/>
 
-* 
+* Dadas $$N+1$$ ciudades y sea $$A=\{a_1, a_2, \dots, a_N \}$$ un conjunto tal que $$a_i$$ indica el número de caminos de la $$i$$-ésima ciudad a la ciudad $$i+1$$. El problema nos piden contar el número de caminos posibles que hay desde la ciudad $$1$$ hasta la ciudad $$N+1$$, sin embargo dado que dicho número puede ser muy grande ($$10^{9000}$$ en el peor de los casos), sólo debemos de mostrar el primer y último dígito.
+* Sea $$P$$ el número de caminos posibles entras las ciudades $$1$$ y $$N+1$$, y $$K$$ el número de dígitos que tiene $$P$$:
+
+  El primer dígito de $$P$$ será igual a:
+  \begin{equation}
+    d_{\text{digito}}^{\text{1er}} = \frac{P}{10^{K-1}} \label{eqG:1}
+  \end{equation}
+  y el último dígito será 
+  \begin{equation}
+    d_{\text{digito}}^{\text{ult}} = P \mod 10 \label{eqG:2}
+  \end{equation}
+  donde:
+  \begin{align}
+    P &= \prod_{i=1}^{N}{a_i} \label{eqG:P}\cr
+    K &= 1 + \lfloor{\log_{10}(P)}\rfloor \label{eqG:K}
+  \end{align}
+* Por lo consiguiente, el problema consta de 2 sub-problemas: 
+
+  1. **Obtener el primer dígito de $$P$$**
+
+      Expresando \eqref{eqG:1} en términos de logaritmos, tenemos:
+
+      \begin{equation}
+        \begin{split}
+          d_{\text{digito}}^{\text{1er}} &= e^{\log\({\frac{P}{10^{K-1}}}\)}   \cr
+                                         &= e^{\log(P) - \log(10^{K-1})} \cr
+                                         &= e^{\log(P) - (K-1)\log(10)}
+        \end{split}
+        \label{eqG:1log}
+      \end{equation}
+      del mismo modo con $$P$$, sea $$S=\log(P)$$ entonces:
+      \begin{equation}
+        P = e^{\log(P)} = e^{S} \label{eqG:logP}
+      \end{equation}
+      Reemplazando \eqref{eqG:logP} en \eqref{eqG:1log}:
+      \begin{equation}
+        \begin{split}
+          d_{\text{digito}}^{\text{1er}} &= e^{\log(P) - (K-1)\log(10)}    \cr
+                                         &= e^{\log(e^{S}) - (K-1)\log(10)}\cr
+                                         &= e^{S - (K-1)\log(10)}
+        \end{split}
+        \label{eqG:1f}
+      \end{equation}
+      $$K$$ también puede ser representado mediante:
+      \begin{equation}
+        K = 1 + \lfloor{\sum_{i=1}^{N}{\log_{10}{(a_i)}}}\rfloor \label{eqG:K2}
+      \end{equation}
+      y aplicando propiedades de logaritmos en \eqref{eqG:P}:
+      \begin{equation}
+        S = \log{\(\prod_{i=1}^{N}{a_i}\)} = \sum_{i=1}^{N}{(\log(a_i))} \label{eqG:S}
+      \end{equation}
+
+      Finalmente, dado que $$d_{\text{digito}}^{\text{1er}}$$ es un número flotante, pero a nosotros únicamente nos interesa saber la parte entera, el primer dígito de $$P$$ será:
+      \begin{equation}
+        d_{\text{digito}}^{\text{1er}} = d_{\text{digito}}^{\text{1er}} - (d_{\text{digito}}^{\text{1er}} \mod 1)
+      \end{equation}
+
+  2. **Obtener el último dígito de $$P$$**
+  
+      Dado que la operación módulo por derecha es distributida con respecto a la multiplicación, es decir $$(A\cdot B) \mod M = ((A \mod M) \cdot (B \mod M)) \mod M$$, para obtener $$d_{\text{digito}}^{\text{ult}}$$ usaremos los valores de $$a_i \mod 10$$. Es importante realizar la operación módulo en cada iteración para la obtención del último dígito dado que en algún instante podríamos estar en un caso de *overflow* dados los límites de un número entero de 32 bits (ver código para mejor aclaración).
+
+* Código en Python:
+
+```python
+# Importar libreria math que contiene la funcion log, log10, floor, y el valor
+# de e (neperiano)
+import math
+
+# Leer T (número de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for iT in xrange(T):
+  # Leer N (número de ciudades - 1)
+  N = int(raw_input())
+  # Leer A (el número de caminos entre ciudades) 
+  A = map(int, raw_input().split(' '))
+
+  # Primer subproblema: primer dígito de P
+  # Calcular S
+  S = sum(map(math.log, A))
+  # Calcular K
+  K = 1 + math.floor(sum(map(math.log10, A)))
+  # Calcular el primer digito
+  p_dig = math.e ** (S - (K - 1) * math.log(10))
+  # Obtener la parte entera de p_dig
+  p_dig = int(p_dig - (p_dig % 1))
+
+  # Segundo subproblema: ultimo digito de P
+  # Obtener el ultimo digito usando la propiedad distributiva por derecha del
+  # modulo para la multiplicacion
+  u_dig = 1
+  for a_i in A:
+    u_dig = (u_dig * a_i) % 10
+
+  # Mostrar los resultados
+  print p_dig, u_dig
+```
 
 ### Problem H. <a id="Problem-H"/>
