@@ -286,4 +286,47 @@ for iT in xrange(T):
   print p_dig, u_dig
 ```
 
-### Problem H. <a id="Problem-H"/>
+### Problem H. Un viaje de ensueño <a id="Problem-H"/>
+
+* Se tiene un omnibus con una velocidad constante $$v_o$$ que parte de un punto de inicio $$P$$ y al cabo de un tiempo, un taxi con una velocidad constante $$v_t$$ parte desde el mismo punto de inicio $$P$$ para intentar alcanzar al omnibus que ya se encuentra a una distancia $$d$$ de $$P$$.
+* El problema nos pide averguar si el taxi podrá alcanzar al omnibus, si es así mostrar el tiempo que demorará y caso contrario mostrar $$-1$$.
+* Suponiendo que existe un punto $$D$$ en el que el taxi logra a alcanzar al omnibus en un tiempo $$T$$, entonces las siguientes relaciones (considerando el movimiento rectilíneo uniforme) tanto para el omnibus como para el taxi tenemos:
+\begin{align}
+  D &= d + v_o T \label{eqH:Domn} \cr
+  D &= v_t T \label{eqH:Dtaxi}
+\end{align}
+
+  Reemplazando \eqref{eqH:Dtaxi} en \eqref{eqH:Domn}:
+\begin{equation}
+\begin{split}
+  v_t T &= d + v_o T \cr
+  (v_t - v_o) T &= d \cr
+  T &= \frac{d}{v_t - v_o}
+\end{split}
+\label{eqH:sol}
+\end{equation}
+
+  Por lo tanto, si ambos vehículos llegan a encontrarse, estos lo harán después de un tiempo $$T$$.
+* Dado que se ha partido de la supocisión que existe un punto de encuentro, se debe de cumplir:
+\begin{equation}
+  0 < v_t - v_o
+\end{equation}
+  Caso contrario, si dicha condición no se cumple, podemos deducir que el punto de encuentro no existe.
+
+* Código Python:
+
+```python
+# Leer T (número de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for iT in xrange(T):
+  # Leer v_t, v_o, y d (velocidad del taxi, velocidad el omnibus, y la distancia
+  # entre el punto inicial y el punto donde se encuentra actualmente el omnibus)
+  v_t, v_o, d = map(int, raw_input().split(' '))
+  # Determinar si existe punto de encuentro, y si es el caso, mostrar el tiempo
+  # que demorará el taxi en alcanzar al omnibus
+  if v_t - v_o <= 0:
+    print "-1"
+  else:
+    print "%.10f" % (d * 1.0 / (vt - vo))
+```
