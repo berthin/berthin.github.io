@@ -171,7 +171,7 @@ for iT in xrange(T):
   sentence = raw_input()
   # Convertir la oración a minúsculas, y dividirla en palabras sin considerar
   # el punto final
-  S = sentence[:-1].lower()split(' ')
+  S = sentence[:-1].lower().split(' ')
   # Invertir S (el conjunto de palabras en la oración)
   S.reverse()
   # Crear una nueva oración uniendo las palabras en S mediante espacios en blanco
