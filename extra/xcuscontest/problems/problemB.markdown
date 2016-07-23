@@ -3,7 +3,7 @@ layout: problem
 title: "Problem B: Brigada de Ataque"
 date: 2016-07-22 21:12 -0500
 categories: cuscontest
-color: "#ff294d"
+color: "#ff1cca"
 showinmenu: true
 ---
 

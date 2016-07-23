@@ -3,7 +3,7 @@ layout: problem
 title: "Problem G: El viaje de Adam"
 date: 2016-07-22 21:12 -0500
 categories: cuscontest
-color: "#ff294d"
+color: "#b012ff"
 showinmenu: true
 ---
 

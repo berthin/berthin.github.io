@@ -3,7 +3,7 @@ layout: problem
 title: "Problem D: Invertidor de Cadenas"
 date: 2016-07-22 21:12 -0500
 categories: cuscontest
-color: "#ff294d"
+color: "#71ff12"
 showinmenu: true
 ---
 

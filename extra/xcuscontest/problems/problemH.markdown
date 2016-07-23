@@ -3,7 +3,7 @@ layout: problem
 title: "Problem H: Un viaje de ensueño"
 date: 2016-07-22 21:12 -0500
 categories: cuscontest
-color: "#ff294d"
+color: "#eeeddf"
 showinmenu: true
 ---
 

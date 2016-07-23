@@ -37,7 +37,7 @@ edit_link: 2016-07-21-xcuscontest.markdown
 <div class="panel panel-default">
   <div class="panel-heading">
   Top 3
-  <a href="#" onclick="return popitup('../../../../extra/xcuscontest_board/Scoreboard.html', 'Scoreboard')">(scoreboard completo)</a>
+  <a href="#" onclick="return popitup('../../../../extra/xcuscontest/board/Scoreboard.html', 'Scoreboard')">(scoreboard completo)</a>
   </div>
   <table class="table">
     <tr>
@@ -51,7 +51,7 @@ edit_link: 2016-07-21-xcuscontest.markdown
       <th>E <div class="circle" style="background: #19ffc2;"></div></th>
       <th>F <div class="circle" style="background: #0a33ff;"></div></th>
       <th>G <div class="circle" style="background: #b012ff;"></div></th>
-      <th>H <div class="circle" style="background: #ff3108;"></div></th>
+      <th>H <div class="circle" style="background: #eeeddf;"></div></th>
     </tr>
     <tr>
       <th>1</th><td>[ACM] 1BUCLE + Rick </td><td> <b>6</b> &nbsp;&nbsp;830</td><td class="score_correct"> 4/199 </td><td class="score_correct"> 2/229 </td><td class="score_correct"> 1/206 </td><td class="score_correct"> 3/36 </td><td class="score_incorrect"> 1  </td><td class="score_incorrect"> 2 </td><td class="score_correct"> 1/31 </td><td class="score_first"> 1/9 </td>

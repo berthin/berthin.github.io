@@ -3,7 +3,7 @@ layout: problem
 title: "Problem F: Baile de Invierno"
 date: 2016-07-22 21:12 -0500
 categories: cuscontest
-color: "#ff294d"
+color: "#0a33ff"
 showinmenu: true
 ---
 
