@@ -280,7 +280,7 @@ for iT in xrange(T):
   # modulo para la multiplicacion
   u_dig = 1
   for a_i in A:
-    u_dig = (u_dig * a_i) % 10
+    u_dig = (u_dig * (a_i % 10)) % 10
 
   # Mostrar los resultados
   print p_dig, u_dig
