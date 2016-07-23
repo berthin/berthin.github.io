@@ -27,8 +27,8 @@ edit_link: 2016-07-21-xcuscontest.markdown
       <li><a href="#Problem-C">H</a></li>
     </ul>
   </li>
-  <li role="presentation"><a href="../../../../extra/xcuscontest_board/Scoreboard.html">Scoreboard</a></li>
-  <li role="presentation"><a href="#">Extras</a></li>
+  <li role="presentation"><a href="../../../../extra/xcuscontest/board/Scoreboard.html">Scoreboard</a></li>
+  <li role="presentation"><a href="../../../../extra/xcuscontest/problems/problemA.html">Extras</a></li>
 </ul>
 -->
 
@@ -67,15 +67,24 @@ edit_link: 2016-07-21-xcuscontest.markdown
 
 # Problem Set 
 
-* [Problem A. Horarios](#Problem-A)
-* [Problem B. Brigada de Ataque](#Problem-B)
-* [Problem C. Cuadradolandia](#Problem-C)
-* [Problem D. Invertidor de Cadenas](#Problem-D)
-* [Problem E. Warrencio y el Dota](#Problem-E)
-* [Problem F. Baile de Invierno](#Problem-F)
-* [Problem G. El viaje de de Adam](#Problem-G)
-* [Problem H. Un viaje de ensueño](#Problem-H)
+* [Problem A. Horarios](#Problem-A) ....................... [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemA.html)
+* [Problem B. Brigada de Ataque](#Problem-B) ......... [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemB.html)
+* [Problem C. Cuadradolandia](#Problem-C) ............. [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemC.html)
+* [Problem D. Invertidor de Cadenas](#Problem-D) .... [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemD.html)
+* [Problem E. Warrencio y el Dota](#Problem-E) ........ [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemE.html)
+* [Problem F. Baile de Invierno](#Problem-F) ............ [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemF.html)
+* [Problem G. El viaje de de Adam](#Problem-G) ....... [(descripción del problema)](
+../../../../extra/xcuscontest/problems/problemG.html)
+* [Problem H. Un viaje de ensueño](#Problem-H) ...... [(descripción del problema)](
+  ../../../../extra/xcuscontest/problems/problemH.html)
 
+# Problem Set Analysis
 
 ### Problem A. Horarios <a id="Problem-A"/>
 * Sea $$ H = \lbrace (t_{o_1}, t_{f_1}), (t_{o_2}, t_{f_2}), \dots (t_{o_N}, t_{f_N}) \rbrace $$ un conjunto indicando los horarios de $$ N $$ cursos tal que: $$ (t_{o_p}, t_{f_p}) $$ indica el tiempo de inicio y tiempo fin para el $$ p $$-ésimo curso ($$ 1 \leq p \leq N $$). Nos piden obtener el máximo intérvalo libre entre cursos ($$ t_{libre} $$) y el máximo intérvalo consecutivo de cursos ($$ t_{ocupado}$$).

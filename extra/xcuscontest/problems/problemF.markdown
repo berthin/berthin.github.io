@@ -1,0 +1,58 @@
+---
+layout: problem
+title: "Problem F: Baile de Invierno"
+date: 2016-07-22 21:12 -0500
+categories: cuscontest
+color: "#ff294d"
+showinmenu: true
+---
+
+## Problem description
+
+Hogwarts fue escogida como sede de la mayor competencia entre magos del mundo, el Torneo de los Tres Magos, que envolverá las tres escuelas de magia más famosas de Europa: Hogwarts, Beauxbatons y Durmstrang. Este torneo funciona de la siguiente forma. Inicialmente, un representante (llamado campeón) de cada escuela es seleccionado a través del Cáliz de Fuego. Después, los campeones realizan, a lo largo del año, tres tareas diferentes. Se consagra de vencedor del Torneo de los Tres Magos el campeón  que acumula más puntos en las tres tareas.
+
+Parte tradicional del Torneo de los Tres Magos, el Baile de Invierno se llevará a cabo en el Gran Salón, en el día de Navidad. La profesora Minerva McGonagall fue designada como responsable por las aulas de baile de los alumnos de Hogwarts. A fin de prepararlos para el Baile de Invierno, después del término de aulas muchas parejas fueron formadas voluntariamente. Sin embargo algunos alumnos permanecieron sin pareja. Por esta razón, la profesora Minerva decidió formar parejas por cuenta propia.
+
+Ella cree que la mejor forma de emparejar es unir un hombre y una mujer que tengan, como máximo, una pequeña diferencia entre sus habilidades de baile. Dado que la profesora Minerva conoce la habilidad de baile (representado por número entero entre 1 y 100, tal que el número 1 se refiere a un pésimo bailarín y el número 100 se refiere a un bailarín perfecto) de cada uno de sus alumnos, ella intentará formar el mayor número de parejas tales que, para cada pareja, la diferencia de habilidades de baile entre el hombre y la mujer sea menor o igual a un número entero $$D$$. Las parejas formadas deste modo son llamadas “parejas equilibradas”.
+
+Tu tarea es escribir un programa que, dadas las habilidades de baile de los alumnos sin pareja y la diferencia máxima de habilidades permitida entre los integrantes de una pareja, determinar el mayor número de parejas equilibradas que pueden ser formadas.
+
+## Input
+
+La entrada del problema contiene varios casos de prueba. La primera línea es un entero $$T$$ ($$1\leq T \leq 100$$) indicando el número de casos de prueba. Para cada caso, se sigue el siguiente formato de entrada:
+
+  * La primera contiene tres números enteros $$M$$, $$N$$, y $$D$$ tales que M representa el número de hombres, $$N$$ el número de mujeres, y $$D$$ la diferencia máxima de habilidades permitida entre cada integrante de una pareja ($$1 \leq M, N \leq 10^5, 0 \leq D \leq 99$$).
+
+  * La segunda línea contiene $$M$$ números enteros $$X_1, X_2, \dots, X_M$$ que representan las habilidades de los hombres ($$1 \leq X_i \leq 100$$).
+
+  * La tercera línea contiene $$N$$ números enteros $$Y_1, Y_2, \dots, Y_N$$ que representan las habilidades de las mujeres ($$1 \leq Y_i \leq 100$$).
+
+## Output
+
+Para cada caso de prueba, el programa deberá imprimir una línea con el formato <span class="texttt"># maximo de parejas equilibradas = $$R$$ </span>, donde $$R$$ indica el mayor número de parejas equilibradas que pueden ser formadas.
+
+## Example
+
+<div class="panel panel-default">
+  <table class="table" style="font-family:'Lucida Console',monoscape;">
+    <tr>
+      <th> Input </th>
+      <th> Output </th>
+    </tr>
+    <tr>
+      <td>
+        2<br>
+        8 7 4<br>
+        5 15 25 35 45 55 65 75<br>
+        10 20 30 40 50 60 70<br>
+        12 14 0<br>
+        46 41 51 45 36 48 49 51 51 39 59 57<br>
+        52 39 55 50 54 30 51 33 30 52 55 31 30 43<br>
+      </td>
+      <td> 
+        # maximo de parejas equilibradas = 0<br>
+        # maximo de parejas equilibradas = 2<br>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<style type="text/css">
+.circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid 1px black;
+    display: inline-block;
+}
+.texttt{
+  font-family: monospace;
+  color: red;
+}
+</style>
+
+{% for my_page in site.pages %}
+  {% if my_page.title %}
+    {% if my_page.layout == "problem" %}
+    <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+
+<article class="problem" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">{{ page.title }}
+    <div class="circle" style="background: {{ page.color }};"</div>
+    </h2>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</article>
