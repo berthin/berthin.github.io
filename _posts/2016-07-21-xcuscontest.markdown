@@ -152,9 +152,77 @@ for iT in xrange(T):
   print t_libre, t_ocupado
 ```
 
-### Problem B. <a id="Problem-B"/>
+### Problem B. Brigada de Ataque <a id="Problem-B"/>
+* Dados $$N$$ soldados con fuerzas $$F=\{f_1, f_2, \dots, f_N\}$$ tal que $$f_i$$ indica la fuerza del $$i$$-ésimo soldado. El problema pide encontrar la máxima longitud de un subconjunto $$L \subseteq F$$ tal que $$L = \{f_{s_1}, f_{s_2}, \dots, f_{s_M} \}$$ donde $$S = \{s_1, s_2, \dots, s_M\}$$ siempre y cuando se cumpla:
+
+\begin{align}
+  0 < s_p < s_q \leq N \iff p < q \cr
+  0 \leq M \leq N \cr
+  f_{s_p} > f_{s_q}, ~~ \forall f_{s_p}, f_{s_q} \in F \text{ s.t. } 1 \leq p < q \leq M
+\end{align}
+  
+  $$F$$ será conocida como una subsecuencia decreciente de longitud máxima (LDS: *longest decreasing subsequence*), y por tanto la respuesta que nos piden hallar viene a ser dada por $$M$$.
+
+* Supongamos que en lugar de encontrar un LDS $$L$$ nos enfocamos a construir una subsecuencia $$R$$ intentando encontrar la mejor posición para un $$f_i$$ dentro de la subsecuencia formada hasta un índice $$i-1$$.
+
+  Por ejemplo, sea `F = {7, 9, 4, 2, 6, 5, 3}`:
+
+    * Para i = 1: `R = {7}`. Caso base.
+    * Para i = 2: `R = {9}`. Hasta el momento, el LDS puede ser `{7}` o `{9}` pero nos conviene tomar el segundo valor dado que si el siguiente elemento es menor que `9` pero mayor a `7`, podríamos hacer que R siga creciendo.
+    * Para i = 3: `R = {9, 4}`. Dado que el elemento de la posición 1 en `R` es `9` y es mayor a `4`, entonces `R` puede seguir creciendo.
+    * Para i = 4: `R = {9, 4, 2}`. El mismo caso que para i = 3.
+    * Para i = 5: `R = {9, 6, 2}`. La mejor posición que `6` puede tener en una LDS es la segunda de los elementos que contiene nuestra actual subsecuencia.  
+    * Para i = 6: `R = {9, 6, 5}`. La mejor posición que `5` puede tener en una LDS es la tercera de los elementos que contiene nuestra actual subsecuencia.  
+    * Para i = 7: `R = {9, 6, 5, 3}`. El mismo caso que para i = 3.  
+
+
 
 ### Problem C. Cuadradolandia <a id="Problem-C"/>
+
+* Se tiene una figura $$D$$-dimensional, y nos piden contar el número de hypercubos de $$\underbrace{K\times K\times \dots \times K}_{D~veces}$$ para $$1 \leq K \leq N$$.
+* Como dato de entrada nos dan un número $$M$$ que indica el número de hypercubos de $$\underbrace{1\times 1\times \dots \times 1}_{D~veces}$$ que hay para un determinado espacio $$D$$-dimensional, por lo que:
+\begin{equation}
+\begin{split}
+  N ^ D &= M \cr
+  N &= \sqrt[D]{M}
+\end{split}
+\end{equation}
+* Suponiendo que $$D=2$$:
+  * Para cuadrados de dimension $$1\times 1$$ se tienen $$N \times N $$ cuadrados.
+  * Para cuadrados de dimension $$2\times 2$$ se tienen $$(N - 1) \times (N - 1) $$ cuadrados.
+  * Para cuadrados de dimension $$3\times 3$$ se tienen $$(N - 2) \times (N - 2)$$ cuadrados.
+
+    $$\vdots$$
+
+  * Para cuadrados de dimension $$N\times N$$ se tienen $$(N - (N - 1)) \times (N - (N - 1)) $$ cuadrados.
+  * Siendo el número total de cuadrados igual a:
+  \begin{equation}
+    \sum_{K=1}^{N}{K^2}
+  \end{equation}
+* De manera general, para un espacio $$D$$ dimensional, el número de hipercubos estará expresado mediante:
+\begin{equation}
+  \sum_{K=1}^{N}{K^D}
+\end{equation}
+
+* Código Python:
+
+```python
+# Leer T (número de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for iT in xrange(T):
+  # Leer M, D (el numero de figuras de 1x1x...x1 (D-veces), y la dimension en la
+  # que se encuentran el espacio)
+  M, D = map(int, raw_input().split(' '))
+  # Calcular N
+  N = M ** (1. / D)
+  # Obtener el número de hypercubos
+  ans = sum([K ** D for K in xrange(1, N + 1)])
+  # Mostrar la respuesta
+  print ans
+
+```
+
 
 ### Problem D. Invertidor de Cadenas <a id="Problem-D"/>
 
