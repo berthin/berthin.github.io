@@ -163,18 +163,70 @@ for iT in xrange(T):
   
   $$F$$ será conocida como una subsecuencia decreciente de longitud máxima (LDS: *longest decreasing subsequence*), y por tanto la respuesta que nos piden hallar viene a ser dada por $$M$$.
 
-* Supongamos que en lugar de encontrar un LDS $$L$$ nos enfocamos a construir una subsecuencia $$R$$ intentando encontrar la mejor posición para un $$f_i$$ dentro de la subsecuencia formada hasta un índice $$i-1$$.
+* Sea $$H = \{h_1=f_N, h_2=f_{N-1}, \dots, h_N=f_1\}$$ el conjunto $$F$$ pero invertido. Ahora el problema consiste en obtener la longitud de la subsecuencia creciente máxima (LIS: *longest increasing subsequence*). Dado que la longuitud del LIS de $$H$$ es la misma que la longitud del LDS de $$F$$. Podemos encontrar el LIS de $$H$$ y así poder resolver el problema.
 
-  Por ejemplo, sea `F = {7, 9, 4, 2, 6, 5, 3}`:
+* El cómo resolver el problema de LIS se va a obviar dado que existen mucha información disponible en libros y sitios web. Se recomienda leer uno de los siguientes artículos:
+  * [LIS (@geeksforgeeks)](http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/)
+  * [LIS (@algorithmist)](http://www.algorithmist.com/index.php/Longest_Increasing_Subsequence)
+  * [LIS (princeton slides)](https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf)
 
-    * Para i = 1: `R = {7}`. Caso base.
-    * Para i = 2: `R = {9}`. Hasta el momento, el LDS puede ser `{7}` o `{9}` pero nos conviene tomar el segundo valor dado que si el siguiente elemento es menor que `9` pero mayor a `7`, podríamos hacer que R siga creciendo.
-    * Para i = 3: `R = {9, 4}`. Dado que el elemento de la posición 1 en `R` es `9` y es mayor a `4`, entonces `R` puede seguir creciendo.
-    * Para i = 4: `R = {9, 4, 2}`. El mismo caso que para i = 3.
-    * Para i = 5: `R = {9, 6, 2}`. La mejor posición que `6` puede tener en una LDS es la segunda de los elementos que contiene nuestra actual subsecuencia.  
-    * Para i = 6: `R = {9, 6, 5}`. La mejor posición que `5` puede tener en una LDS es la tercera de los elementos que contiene nuestra actual subsecuencia.  
-    * Para i = 7: `R = {9, 6, 5, 3}`. El mismo caso que para i = 3.  
+* La idea para encontrar el valor de $$M$$ es enfocarnos en ubicar para cada elemento de $$H$$ la mejor posición en una subsecuencia creciente $$R$$ que a cada iteración va formándose. 
 
+  Por ejemplo, sea `H = {3, 5, 6, 2, 7, 10, 8, 9}`:
+
+    * Para $$h_1 = 3$$: `R = {3}`. Caso base.
+    * Para $$h_2 = 5$$: `R = {3, 5}`. Dado que `5` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_3 = 6$$: `R = {3, 5, 6}`. Dado que `6` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_4 = 2$$: `R = {2, 5, 6}`. La mejor posición de `2` en una subsecuencia creciente es la primera dado que es menor a `3`.
+    * Para $$h_5 = 7$$: `R = {2, 5, 6, 7}`. Dado que `7` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_6 = 10$$: `R = {2, 5, 6, 7, 10}`. Dado que `10` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_7 = 8$$: `R = {2, 5, 6, 7, 8}`. La mejor posición de `8` en una subsecuencia creciente es la ultima dado que es menor a `10`. Quiere decir que nos combiene tener a `8` en esa posición en lugar de `10`.
+    * Para $$h_8 = 9$$: `R = {2, 5, 6, 7, 8, 9}`. Dado que `9` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+
+  Como resultado final, $$M = length(R) = 6$$. Sin embargo, $$R$$ no es el LIS de $$H$$, sólo se ha llegado a determinar la longitud que nos piden como respuesta.
+* Por lo tanto, la estrategia a usar es la siguiente:
+  * Crear $$R$$
+  * Si el último elemento de $$R$$ es menor a $$h_i$$, agregar $$h_i$$ a $$R$$.
+  * Caso contrario, buscar la posición de $$h_i$$ en $$R$$ y reemplazar el elemento en esa posición por $$h_i$$.
+
+* **Ejercicio:**  Demostrar $$R$$ es una subsecuencia creciente en cada paso.
+* **Ejercicio:**  Demostrar que al reemplazar un elemento en $$R$$ por $$h_i$$, el LIS que contenga al elemento $$h_i$$ tendrá longitud igual a la posición del elemento de $$R$$ que será reemplazado por $$h_i$$.
+* **Ejercicio:**  Sea $$L = LIS(H)$$, demostrar que $$length(L)$$, bajo la anterior estratégia, es igual a $$length(R)$$.
+* Código en Python:
+
+```python
+# Leer T (numero de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for i in xrange(T):
+  # Leer N (longuitud de F)
+  N = int(raw_input())
+  # Leer F (las fuerzas de los soldados)
+  F = [int(x) for x in raw_input().split(' ') if len(x)>0]
+  # Crear H (invertir F)
+  H = F[::-1]
+  # Init R
+  R = [H[0]]
+  # Procesar el resto de elementos de H
+  for h_i in H[1:]:
+    # Si el ultimo elemento de R es menor a h_i, agregar h_i a R
+    if R[-1] < h_i:
+      R.append(h_i)
+    # Buscar la posicion de h_i en R mediante búsqueda binaria (esto es posible
+    # dado que R es una subsecuencia creciente)
+    low, high = 0, len(R)
+    while high - low > 1:
+        mid = (low + high) / 2
+        if h_i < R[mid]:
+            high = mid
+        else:
+            low = mid
+    # Reemplazar h_i por el elemento que corresponde dentro de R, de esta forma
+    # h_i se encontrara en la mejor posicion dentro de R
+    R[mid] = h_i
+  # Mostrar M = len(R), la longitud del LIS de H
+  print len(R)
+```
 
 
 ### Problem C. Cuadradolandia <a id="Problem-C"/>
