@@ -202,7 +202,7 @@ for i in xrange(T):
   # Leer N (longuitud de F)
   N = int(raw_input())
   # Leer F (las fuerzas de los soldados)
-  F = [int(x) for x in raw_input().split(' ') if len(x)>0]
+  F = map(int, raw_input().split(' '))
   # Crear H (invertir F)
   H = F[::-1]
   # Init R
