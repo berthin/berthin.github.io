@@ -304,7 +304,62 @@ for iT in xrange(T):
 
 ### Problem E. <a id="Problem-E"/>
 
-### Problem F. <a id="Problem-F"/>
+### Problem F. Baile de Invierno <a id="Problem-F"/>
+* Dados dos conjuntos $$X=\{ x_1, x_2, \dots, x_N\}$$ y $$Y=\{ y_1, y_2, \dots, y_M$$ representando las habilidades de baile de $$N$$ hombres y $$M$$ mujeres respectivamente, se pide hallar un subjconjunto $$S \subset X \times Y$$, tal que $$\forall s_k = (x_i, y_j) \in S$$, se cumpla lo siguiente:
+\begin{equation}
+  (x_i - y_j)^2 \leq D^2
+  \label{eqF:D}
+\end{equation}
+  En otras palabras, $$S$$ es un conjunto de tuplas $$(x_i, y_j)$$ indicando que es posible formar una pareja entre el $$i$$-ésimo varón y la $$j$$-ésima mujer cumpliendo que sus habilidades de baile no sean diferentes por más de una diferencia de $$D$$.
+* El problema nos pide hallar la longitud del máximo $$S$$ que se puede formar cumpliendo con la condición en \eqref{eqF:D}
+* Suponiendo que tanto $$X$$ como $$Y$$ están ordenados ascendentemente, definamos una función $$f(i, j)$$ que determine la longitud del subconjunto $$S \subset X_{1\dots i} \times Y_{1\dots j}$$ que puede ser obtenido utilizando los $$i$$ primeros elementos de $$X$$ y $$j$$ primeros elementos de $$Y$$. La solución al problema está dado por $$f(N, M)$$.
+
+$$
+\begin{equation}
+  f(i,j) =\left\{
+    \begin{matrix}
+      0 & \text{if} & i == 0 \text{ or } j == 0\\ 
+      1 + f(i - 1, j - 1) & \text{if} &  (x_i - y_j)^2 \leq D\\
+      f(i, j - 1) & \text{if} & x_i < y_j \\
+      f(i - 1, j) & \text{otherwise} & x_i > y_j 
+    \end{matrix}\right.
+    \label{eqF:f}
+  \end{equation}
+$$
+
+* *TODO: prueba de la solucion*
+* Código Python
+
+```python
+# Leer T (número de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for iT in xrange(T):
+  # Leer M, N, D (nro de varones, nro de mujeres, la máxima diferencia permitida
+  # para formar parejas de baile)
+  M, N, D = map(int, raw_input().split(' '))
+  # Leer X (habilidades de baile de los varones)
+  X = map(int, raw_input().split(' '))
+  # Leer Y (habilidades de baile de las mujeres)
+  Y = map(int, raw_input().split(' '))
+  # Inicializar punteros i, j (Notar que se trabaja con arreglos con índice 0
+  # como inicio)
+  i, j = N - 1, M - 1
+  # Inicializar el contador de parejas formadas hasta el momento
+  n_parejas = 0
+  # Intentar formar las parejas
+  while i >= 0 and j >= 0:
+    if (X[i] - Y[j]) ** 2 <= D**2:
+      n_parejas += 1
+      i -= 1
+      j -= 1
+    elif X[i] < Y[j]:
+      j -= 1
+    else:
+      i -= 1
+  # Mostrar el resultado
+  print '# maximo de parejas equilibradas = %d' % n_parejas
+```
 
 ### Problem G. El viaje de Adam <a id="Problem-G"/>
 
