@@ -228,7 +228,6 @@ for i in xrange(T):
   print len(R)
 ```
 
-
 ### Problem C. Cuadradolandia <a id="Problem-C"/>
 
 * Se tiene una figura $$D$$-dimensional, y nos piden contar el número de hypercubos de $$\underbrace{K\times K\times \dots \times K}_{D~veces}$$ para $$1 \leq K \leq N$$.
@@ -275,7 +274,6 @@ for iT in xrange(T):
 
 ```
 
-
 ### Problem D. Invertidor de Cadenas <a id="Problem-D"/>
 
 * Dada una oración compuesta con un conjunto de palabras y un punto final, el objetivo del problema es invertir el orden de las palabras considerando que la oración resultante deba de tener la primera letra de la primera palabra en **MAYUSCULA** y la oración termine con un **PUNTO FINAL**.
@@ -302,7 +300,70 @@ for iT in xrange(T):
 ```
 
 
-### Problem E. <a id="Problem-E"/>
+### Problem E. Warrencio y el Dota <a id="Problem-E"/>
+* Dados $$N+1$$ personas (Warrencio y $$N$$ amigos suyos) así como $$M$$ máquinas disponibles y las preferencias de cada persona en usar determinadas máquinas, indicar con cuantos amigos Warrencio podrá jugar. Como dato, se indica que Warrencio está representado por el índice $$0$$.
+* El problema puede ser modelado como un **Grafo Bipartito** $$G=(V, E)$$ donde los vértices pueden ser dividos en dos conjuntos disjuntos $$P$$ y $$M$$ de forma que $$V = P \cup M$$, siendo $$P$$ las personas y $$M$$ las máquinas. Además, una arista $$(p,m) \in E$$ indicará que la $$p$$-ésima persona tiene preferencia por usar la $$m$$-ésima máquina.
+* Se pide buscar la **Máxima Cardinalidad** en un Grafo Bipartito.
+* Revisar los siguientes links:
+  
+  * [Bipartite Graph Animation @visualgo](http://visualgo.net/matching)
+
+* Por ejemplo, sea:
+  `P = {0, 1, 2, 3}`, `M = {0, 1, 2, 3}` y 
+  `E = {(0,2), (1,0), (2,3), (3,1), (3,2)}`. El grafo $$G$$ se puede armar como:
+<center><img src="../../../../extra/xcuscontest/sample01E.png" alt="drawing" style="width:160px;height:240px;"></center>
+  Siendo el nodo $$0$$ del conjunto $$P$$, el nodo que representa a Warrencio. Por lo tanto, la solución al problema sería seleccionar las siguientes aristas:
+<center><img src="../../../../extra/xcuscontest/sample02E.png" alt="drawing" style="width:160px;height:240px;"></center>
+  De forma que, cada persona está emparejada con una máquina y como respuesta, se tendrán $$3$$ amigos que puedan jugar junto a Warrencio.
+
+* *TODO 1:* Explicar la condición de Warrencio para reducir el problema a cardinalidad máxima.
+* *TODO 2:* Implementar en python
+
+* Código CPP:
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+
+vector < vector < int > > AdjList;
+
+vector < int > match, vis;
+
+int Aug(int u){
+  if (vis[u]) return 0;
+  vis[u] = 1;
+  for (int j = 0; j < AdjList[u].size(); j++) {
+    int r = AdjList[u][j];
+    if (match[r] == -1 || Aug(match[r])) {
+      match[r] = u;
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int main(){
+  int T;
+  int N, M, P;
+  int u, v;
+  scanf("%d", &T);
+  while (T--){
+    scanf("%d%d%d", &N, &M, &P);
+    AdjList = vector < vector < int > > (N + 1 + M);
+    while(P--){
+      scanf("%d%d", &u, &v);
+      AdjList[u].push_back(v + N + 1);
+    }
+    int ans = 0;
+    match.assign(N + 1 + M, -1);
+    for (int u = 0; u < N + 1 + M; u++) {
+      vis.assign(N + 1 + M, 0);
+      ans += Aug(u);
+    }
+    printf("%d\n", ans - 1);
+  }
+}
+```
 
 ### Problem F. Baile de Invierno <a id="Problem-F"/>
 * Dados dos conjuntos $$X=\{ x_1, x_2, \dots, x_N\}$$ y $$Y=\{ y_1, y_2, \dots, y_M$$ representando las habilidades de baile de $$N$$ hombres y $$M$$ mujeres respectivamente, se pide hallar un subjconjunto $$S \subset X \times Y$$, tal que $$\forall s_k = (x_i, y_j) \in S$$, se cumpla lo siguiente:
@@ -327,7 +388,34 @@ $$
   \end{equation}
 $$
 
-* *TODO: prueba de la solucion*
+* *TODO:* Demostrar que la estregia usada genera un subconjunto $$S$$ óptimo.
+
+<!---
+Para probar que la estregia usada genera un subconjunto $$S$$ óptimo, supongamos que $$O \subset X \times Y$$ es una solución óptima, entonces tenemos que demostrar que es posible reconstruir $$O$$ a partir de $$S$$ sin dismunir o aumentar la longitud de $$S$$ y de esta forma $$S$$ también será una solución óptima.
+  * Sea $$O$$ una solución óptima y $$(x_j, y_k) \in O$$:
+    * Supongamos que $$(x_j, y_k) \notin S$$.
+      * Si $$x_j$$ fue considerado dentro de una pareja en $$S$$, entonces $$\exists~ y_p ~/~ (x_j, y_p) \in S$$.
+        * Si $$y_p == y_k$$, entonces $$(x_j, y_k) \in S$$
+        * Caso contrario tenemos el siguiente escenario:
+            \begin{matrix}
+              x_1 & \dots & x_j & \dots & x_q & \dots & x_N \cr
+              y_1 & \dots & y_p & \dots & y_k & \dots & y_M
+            \end{matrix}
+          * Si $$y_k$$ fue considerado dentro de una pareja en $$S$$, entonces $$\exists ~x_q~/ (x_q, y_k) \in S$$, entonces tanto $$(x_j, y_k)$$, $$(x_j, y_p)$$, $$(x_q, y_k)$$ forman parte de una solución, por la condición del problema se debe de cumplir lo siguiente:
+              \begin{align}
+                (x_j - y_k)^2 \leq D^2 \cr
+                (x_j - y_p)^2 \leq D^2 \cr
+                (x_q - y_k)^2 \leq D^2
+              \end{align}
+            Entonces:
+              \begin{align}
+                (x_j - y_k)^2 + (x_j - y_p)^2 & \leq  2 D^2 \cr 
+                (x_j^2 - 2 x_j y_k + y_k^2) + (x_j^2 - 2 x_j y_p + y_p^2) & \leq  2 D^2 \cr
+                (x_j^2 + y_p^2) + (-2 x_j y_k + y_k^2 + x_j^2- 2 x_j y_p) & \leq  2 D^2 \cr
+                (x_j^2 \color{red}{-2 x_j y_p} + y_p^2) + (-2 x_j y_k + y_k^2 + x_j^2 - 2 x_j y_p \color{red}{-2 x_j y_p}) & \leq  2 D^2 \cr
+                (x_j - y_p)^2 + (-2 x_j y_k + y_k^2 + x_j^2 - 2 x_j y_p \color{red}{-2 x_j y_p}) & \leq  2 D^2
+              \end{align}
+-->
 * Código Python
 
 ```python
