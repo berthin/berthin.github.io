@@ -163,19 +163,70 @@ for iT in xrange(T):
   
   $$F$$ será conocida como una subsecuencia decreciente de longitud máxima (LDS: *longest decreasing subsequence*), y por tanto la respuesta que nos piden hallar viene a ser dada por $$M$$.
 
-* Supongamos que en lugar de encontrar un LDS $$L$$ nos enfocamos a construir una subsecuencia $$R$$ intentando encontrar la mejor posición para un $$f_i$$ dentro de la subsecuencia formada hasta un índice $$i-1$$.
+* Sea $$H = \{h_1=f_N, h_2=f_{N-1}, \dots, h_N=f_1\}$$ el conjunto $$F$$ pero invertido. Ahora el problema consiste en obtener la longitud de la subsecuencia creciente máxima (LIS: *longest increasing subsequence*). Dado que la longuitud del LIS de $$H$$ es la misma que la longitud del LDS de $$F$$. Podemos encontrar el LIS de $$H$$ y así poder resolver el problema.
 
-  Por ejemplo, sea `F = {7, 9, 4, 2, 6, 5, 3}`:
+* El cómo resolver el problema de LIS se va a obviar dado que existen mucha información disponible en libros y sitios web. Se recomienda leer uno de los siguientes artículos:
+  * [LIS (@geeksforgeeks)](http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/)
+  * [LIS (@algorithmist)](http://www.algorithmist.com/index.php/Longest_Increasing_Subsequence)
+  * [LIS (princeton slides)](https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf)
 
-    * Para i = 1: `R = {7}`. Caso base.
-    * Para i = 2: `R = {9}`. Hasta el momento, el LDS puede ser `{7}` o `{9}` pero nos conviene tomar el segundo valor dado que si el siguiente elemento es menor que `9` pero mayor a `7`, podríamos hacer que R siga creciendo.
-    * Para i = 3: `R = {9, 4}`. Dado que el elemento de la posición 1 en `R` es `9` y es mayor a `4`, entonces `R` puede seguir creciendo.
-    * Para i = 4: `R = {9, 4, 2}`. El mismo caso que para i = 3.
-    * Para i = 5: `R = {9, 6, 2}`. La mejor posición que `6` puede tener en una LDS es la segunda de los elementos que contiene nuestra actual subsecuencia.  
-    * Para i = 6: `R = {9, 6, 5}`. La mejor posición que `5` puede tener en una LDS es la tercera de los elementos que contiene nuestra actual subsecuencia.  
-    * Para i = 7: `R = {9, 6, 5, 3}`. El mismo caso que para i = 3.  
+* La idea para encontrar el valor de $$M$$ es enfocarnos en ubicar para cada elemento de $$H$$ la mejor posición en una subsecuencia creciente $$R$$ que a cada iteración va formándose. 
 
+  Por ejemplo, sea `H = {3, 5, 6, 2, 7, 10, 8, 9}`:
 
+    * Para $$h_1 = 3$$: `R = {3}`. Caso base.
+    * Para $$h_2 = 5$$: `R = {3, 5}`. Dado que `5` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_3 = 6$$: `R = {3, 5, 6}`. Dado que `6` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_4 = 2$$: `R = {2, 5, 6}`. La mejor posición de `2` en una subsecuencia creciente es la primera dado que es menor a `3`.
+    * Para $$h_5 = 7$$: `R = {2, 5, 6, 7}`. Dado que `7` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_6 = 10$$: `R = {2, 5, 6, 7, 10}`. Dado que `10` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+    * Para $$h_7 = 8$$: `R = {2, 5, 6, 7, 8}`. La mejor posición de `8` en una subsecuencia creciente es la ultima dado que es menor a `10`. Quiere decir que nos combiene tener a `8` en esa posición en lugar de `10`.
+    * Para $$h_8 = 9$$: `R = {2, 5, 6, 7, 8, 9}`. Dado que `9` es mayor al último elemento de $$R$$, la subsecuencia puede aumentar.
+
+  Como resultado final, $$M = length(R) = 6$$. Sin embargo, $$R$$ no es el LIS de $$H$$, sólo se ha llegado a determinar la longitud que nos piden como respuesta.
+* Por lo tanto, la estrategia a usar es la siguiente:
+  * Crear $$R$$
+  * Si el último elemento de $$R$$ es menor a $$h_i$$, agregar $$h_i$$ a $$R$$.
+  * Caso contrario, buscar la posición de $$h_i$$ en $$R$$ y reemplazar el elemento en esa posición por $$h_i$$.
+
+* **Ejercicio:**  Demostrar $$R$$ es una subsecuencia creciente en cada paso.
+* **Ejercicio:**  Demostrar que al reemplazar un elemento en $$R$$ por $$h_i$$, el LIS que contenga al elemento $$h_i$$ tendrá longitud igual a la posición del elemento de $$R$$ que será reemplazado por $$h_i$$.
+* **Ejercicio:**  Sea $$L = LIS(H)$$, demostrar que $$length(L)$$, bajo la anterior estratégia, es igual a $$length(R)$$.
+* Código en Python:
+
+```python
+# Leer T (numero de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for i in xrange(T):
+  # Leer N (longuitud de F)
+  N = int(raw_input())
+  # Leer F (las fuerzas de los soldados)
+  F = map(int, raw_input().split(' '))
+  # Crear H (invertir F)
+  H = F[::-1]
+  # Init R
+  R = [H[0]]
+  # Procesar el resto de elementos de H
+  for h_i in H[1:]:
+    # Si el ultimo elemento de R es menor a h_i, agregar h_i a R
+    if R[-1] < h_i:
+      R.append(h_i)
+    # Buscar la posicion de h_i en R mediante búsqueda binaria (esto es posible
+    # dado que R es una subsecuencia creciente)
+    low, high = 0, len(R)
+    while high - low > 1:
+        mid = (low + high) / 2
+        if h_i < R[mid]:
+            high = mid
+        else:
+            low = mid
+    # Reemplazar h_i por el elemento que corresponde dentro de R, de esta forma
+    # h_i se encontrara en la mejor posicion dentro de R
+    R[mid] = h_i
+  # Mostrar M = len(R), la longitud del LIS de H
+  print len(R)
+```
 
 ### Problem C. Cuadradolandia <a id="Problem-C"/>
 
@@ -223,7 +274,6 @@ for iT in xrange(T):
 
 ```
 
-
 ### Problem D. Invertidor de Cadenas <a id="Problem-D"/>
 
 * Dada una oración compuesta con un conjunto de palabras y un punto final, el objetivo del problema es invertir el orden de las palabras considerando que la oración resultante deba de tener la primera letra de la primera palabra en **MAYUSCULA** y la oración termine con un **PUNTO FINAL**.
@@ -250,9 +300,154 @@ for iT in xrange(T):
 ```
 
 
-### Problem E. <a id="Problem-E"/>
+### Problem E. Warrencio y el Dota <a id="Problem-E"/>
+* Dados $$N+1$$ personas (Warrencio y $$N$$ amigos suyos) así como $$M$$ máquinas disponibles y las preferencias de cada persona en usar determinadas máquinas, indicar con cuantos amigos Warrencio podrá jugar. Como dato, se indica que Warrencio está representado por el índice $$0$$.
+* El problema puede ser modelado como un **Grafo Bipartito** $$G=(V, E)$$ donde los vértices pueden ser dividos en dos conjuntos disjuntos $$P$$ y $$M$$ de forma que $$V = P \cup M$$, siendo $$P$$ las personas y $$M$$ las máquinas. Además, una arista $$(p,m) \in E$$ indicará que la $$p$$-ésima persona tiene preferencia por usar la $$m$$-ésima máquina.
+* Se pide buscar la **Máxima Cardinalidad** en un Grafo Bipartito.
+* Revisar los siguientes links:
+  
+  * [Bipartite Graph Animation @visualgo](http://visualgo.net/matching)
 
-### Problem F. <a id="Problem-F"/>
+* Por ejemplo, sea:
+  `P = {0, 1, 2, 3}`, `M = {0, 1, 2, 3}` y 
+  `E = {(0,2), (1,0), (2,3), (3,1), (3,2)}`. El grafo $$G$$ se puede armar como:
+<center><img src="../../../../extra/xcuscontest/sample01E.png" alt="drawing" style="width:160px;height:240px;"></center>
+  Siendo el nodo $$0$$ del conjunto $$P$$, el nodo que representa a Warrencio. Por lo tanto, la solución al problema sería seleccionar las siguientes aristas:
+<center><img src="../../../../extra/xcuscontest/sample02E.png" alt="drawing" style="width:160px;height:240px;"></center>
+  De forma que, cada persona está emparejada con una máquina y como respuesta, se tendrán $$3$$ amigos que puedan jugar junto a Warrencio.
+
+* *TODO 1:* Explicar la condición de Warrencio para reducir el problema a cardinalidad máxima.
+* *TODO 2:* Implementar en python
+
+* Código CPP:
+
+```c
+#include <bits/stdc++.h>
+using namespace std;
+
+vector < vector < int > > AdjList;
+
+vector < int > match, vis;
+
+int Aug(int u){
+  if (vis[u]) return 0;
+  vis[u] = 1;
+  for (int j = 0; j < AdjList[u].size(); j++) {
+    int r = AdjList[u][j];
+    if (match[r] == -1 || Aug(match[r])) {
+      match[r] = u;
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int main(){
+  int T;
+  int N, M, P;
+  int u, v;
+  scanf("%d", &T);
+  while (T--){
+    scanf("%d%d%d", &N, &M, &P);
+    AdjList = vector < vector < int > > (N + 1 + M);
+    while(P--){
+      scanf("%d%d", &u, &v);
+      AdjList[u].push_back(v + N + 1);
+    }
+    int ans = 0;
+    match.assign(N + 1 + M, -1);
+    for (int u = 0; u < N + 1 + M; u++) {
+      vis.assign(N + 1 + M, 0);
+      ans += Aug(u);
+    }
+    printf("%d\n", ans - 1);
+  }
+}
+```
+
+### Problem F. Baile de Invierno <a id="Problem-F"/>
+* Dados dos conjuntos $$X=\{ x_1, x_2, \dots, x_N\}$$ y $$Y=\{ y_1, y_2, \dots, y_M$$ representando las habilidades de baile de $$N$$ hombres y $$M$$ mujeres respectivamente, se pide hallar un subjconjunto $$S \subset X \times Y$$, tal que $$\forall s_k = (x_i, y_j) \in S$$, se cumpla lo siguiente:
+\begin{equation}
+  (x_i - y_j)^2 \leq D^2
+  \label{eqF:D}
+\end{equation}
+  En otras palabras, $$S$$ es un conjunto de tuplas $$(x_i, y_j)$$ indicando que es posible formar una pareja entre el $$i$$-ésimo varón y la $$j$$-ésima mujer cumpliendo que sus habilidades de baile no sean diferentes por más de una diferencia de $$D$$.
+* El problema nos pide hallar la longitud del máximo $$S$$ que se puede formar cumpliendo con la condición en \eqref{eqF:D}
+* Suponiendo que tanto $$X$$ como $$Y$$ están ordenados ascendentemente, definamos una función $$f(i, j)$$ que determine la longitud del subconjunto $$S \subset X_{1\dots i} \times Y_{1\dots j}$$ que puede ser obtenido utilizando los $$i$$ primeros elementos de $$X$$ y $$j$$ primeros elementos de $$Y$$. La solución al problema está dado por $$f(N, M)$$.
+
+$$
+\begin{equation}
+  f(i,j) =\left\{
+    \begin{matrix}
+      0 & \text{if} & i == 0 \text{ or } j == 0\\ 
+      1 + f(i - 1, j - 1) & \text{if} &  (x_i - y_j)^2 \leq D\\
+      f(i, j - 1) & \text{if} & x_i < y_j \\
+      f(i - 1, j) & \text{otherwise} & x_i > y_j 
+    \end{matrix}\right.
+    \label{eqF:f}
+  \end{equation}
+$$
+
+* *TODO:* Demostrar que la estregia usada genera un subconjunto $$S$$ óptimo.
+
+<!---
+Para probar que la estregia usada genera un subconjunto $$S$$ óptimo, supongamos que $$O \subset X \times Y$$ es una solución óptima, entonces tenemos que demostrar que es posible reconstruir $$O$$ a partir de $$S$$ sin dismunir o aumentar la longitud de $$S$$ y de esta forma $$S$$ también será una solución óptima.
+  * Sea $$O$$ una solución óptima y $$(x_j, y_k) \in O$$:
+    * Supongamos que $$(x_j, y_k) \notin S$$.
+      * Si $$x_j$$ fue considerado dentro de una pareja en $$S$$, entonces $$\exists~ y_p ~/~ (x_j, y_p) \in S$$.
+        * Si $$y_p == y_k$$, entonces $$(x_j, y_k) \in S$$
+        * Caso contrario tenemos el siguiente escenario:
+            \begin{matrix}
+              x_1 & \dots & x_j & \dots & x_q & \dots & x_N \cr
+              y_1 & \dots & y_p & \dots & y_k & \dots & y_M
+            \end{matrix}
+          * Si $$y_k$$ fue considerado dentro de una pareja en $$S$$, entonces $$\exists ~x_q~/ (x_q, y_k) \in S$$, entonces tanto $$(x_j, y_k)$$, $$(x_j, y_p)$$, $$(x_q, y_k)$$ forman parte de una solución, por la condición del problema se debe de cumplir lo siguiente:
+              \begin{align}
+                (x_j - y_k)^2 \leq D^2 \cr
+                (x_j - y_p)^2 \leq D^2 \cr
+                (x_q - y_k)^2 \leq D^2
+              \end{align}
+            Entonces:
+              \begin{align}
+                (x_j - y_k)^2 + (x_j - y_p)^2 & \leq  2 D^2 \cr 
+                (x_j^2 - 2 x_j y_k + y_k^2) + (x_j^2 - 2 x_j y_p + y_p^2) & \leq  2 D^2 \cr
+                (x_j^2 + y_p^2) + (-2 x_j y_k + y_k^2 + x_j^2- 2 x_j y_p) & \leq  2 D^2 \cr
+                (x_j^2 \color{red}{-2 x_j y_p} + y_p^2) + (-2 x_j y_k + y_k^2 + x_j^2 - 2 x_j y_p \color{red}{-2 x_j y_p}) & \leq  2 D^2 \cr
+                (x_j - y_p)^2 + (-2 x_j y_k + y_k^2 + x_j^2 - 2 x_j y_p \color{red}{-2 x_j y_p}) & \leq  2 D^2
+              \end{align}
+-->
+* Código Python
+
+```python
+# Leer T (número de casos de prueba)
+T = int(raw_input())
+# Procesar cada caso
+for iT in xrange(T):
+  # Leer M, N, D (nro de varones, nro de mujeres, la máxima diferencia permitida
+  # para formar parejas de baile)
+  M, N, D = map(int, raw_input().split(' '))
+  # Leer X (habilidades de baile de los varones)
+  X = map(int, raw_input().split(' '))
+  # Leer Y (habilidades de baile de las mujeres)
+  Y = map(int, raw_input().split(' '))
+  # Inicializar punteros i, j (Notar que se trabaja con arreglos con índice 0
+  # como inicio)
+  i, j = N - 1, M - 1
+  # Inicializar el contador de parejas formadas hasta el momento
+  n_parejas = 0
+  # Intentar formar las parejas
+  while i >= 0 and j >= 0:
+    if (X[i] - Y[j]) ** 2 <= D**2:
+      n_parejas += 1
+      i -= 1
+      j -= 1
+    elif X[i] < Y[j]:
+      j -= 1
+    else:
+      i -= 1
+  # Mostrar el resultado
+  print '# maximo de parejas equilibradas = %d' % n_parejas
+```
 
 ### Problem G. El viaje de Adam <a id="Problem-G"/>
 
