@@ -7,6 +7,13 @@ edit_link: 2016-04-01-python-utils.markdown
 ---
 # Must be other post
 
+* Install OpenCV Mac [link](http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/)
+* To use ffmpeg
+```
+brew uninstall ffmpeg
+brew install ffmpeg –build-from-source
+```
+
 * COPY AND PASTE VIM (clipboards)
 ```
 "+y (copy)
