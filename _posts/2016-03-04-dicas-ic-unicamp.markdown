@@ -18,6 +18,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * [Moradia](#moradia)
 * [Tramites RNE y otros](#tramites)
 * [Links importantes](#links-importantes)
+* [Miscelanea](#miscelanea)
 
 
 ## Selección de disciplinas:<a id="seleccion-disciplinas"></a> 
@@ -45,7 +46,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
                   A+B
                   B+B
                   A+C
-                ```
+                  ```
 
 ## Bolsa Capes/CNPq: <a id="bolsa-capes"></a>
 * La bolsa, si es que ustedes están en la lista de los primeros, caerá a inicios de Abril (considerando q hayan ingresado en Febrero). Su duración es de 2 años maestría, y 4 doctorado. No se puede ampliar, ni pausar.
@@ -72,6 +73,26 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 
 ## Trámites de RNE y otros: <a id="tramites"></a>
 * Consultar la siguiente pagina: http://www.ukuko.com/. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
+
+## Miscelanea <a id="miscelania"></a>
+* Revalidacion de diploma (Brasilero) en Peru. Actualmente, para trabajar en el sector publico en Peru es requerida la revalidacion de titulos-diplomas del exterior y este procedimiento lo realiza la SUNEDU. Los pasos para dicho procedimiento son:
+    * En Brasil
+        - Llevar el titulo al cartorio
+        - Llevar el titulo a una notaria que te ponga la apostilha de la haya. *UPDATE: Esto se puede hacer en el cartorio de Barao Geraldo.*
+    * En Perú
+        - Hacer traducir el titulo con un traductor juramentado o uno certificado (este ultimo es mucho mas economico)
+        - Llevar el titulo a SUNEDU (y cumplir otros requisitos menores como pagos, opcional copia digitial de la disertacion en ingles o espanhol)
+
+    * *SUNEDU validará el título en aproximadamente 4 a 6 semanas.*
+
+    * **Questions & Answers**
+        * Q: El apostilhado puede ser realizado en cualquier cartorio?<br> 
+          A: Debe de ser en el cartório de Barão Geraldo, dado que es el único con la firma registrada del Rector de la UNICAMP.
+        * Q: El diploma tiene que ser el original? Copia? Copia certificada?<br>
+          A: Puedes apostilhar una copia cartoriada de tú título. Quizá eso sea mejor, por que en SUNEDU retienen el documento apostilhado hasta que termine el proceso
+        * Q: Y el consulado? Se tiene que hacer algo alli?<br>
+          A: No, pero si ya lo habias hecho por itamarati y el consulado peruano tambien vale, sólo que aquí tendrías q pasar por el ministerio de R.R.E.E.
+
 
 ## Links importantes: <a id="links-importantes"></a>
 * Para moradas:
