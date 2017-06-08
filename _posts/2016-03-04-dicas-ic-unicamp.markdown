@@ -19,6 +19,8 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * [Tramites RNE y otros](#tramites)
 * [Links importantes](#links-importantes)
 * [Miscelanea](#miscelanea)
+    * [Revalidacion de Diploma](#revalidacion-diploma)
+    * [Cuenta Banco de Brasil](#cuenta-bb)
 
 
 ## Selección de disciplinas:<a id="seleccion-disciplinas"></a> 
@@ -75,6 +77,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * Consultar la siguiente pagina: http://www.ukuko.com/. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
 
 ## Miscelanea <a id="miscelania"></a>
+### Revalidacion de Diploma <a id="revalidacion-diploma"></a>
 * Revalidacion de diploma (Brasilero) en Peru. Actualmente, para trabajar en el sector publico en Peru es requerida la revalidacion de titulos-diplomas del exterior y este procedimiento lo realiza la SUNEDU. Los pasos para dicho procedimiento son:
     * En Brasil
         - Llevar el titulo al cartorio
@@ -93,6 +96,16 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
         * Q: Y el consulado? Se tiene que hacer algo alli?<br>
           A: No, pero si ya lo habias hecho por itamarati y el consulado peruano tambien vale, sólo que aquí tendrías q pasar por el ministerio de R.R.E.E.
 
+### Cuenta Banco de Brasil <a id="cuenta-bb"></a>
+* Cuando se obtiene una bolsa (CAPES o CNPq) por lo general piden una cuenta en el Banco de Brasil (BB). En Barão Geraldo, abrir una cuenta puede ser llevado a cabo en dos sitios: a) Centro de Barão, y b) UNICAMP.
+* Los documentos requeridos son *(falta confirmar los documentos requeridos necesarios)*:
+    * Carta del IC indicando que tendras bolsa
+    * Carta de aceptacion de la UNICAMP (o carterinha)
+    * Documento que pruebe tu residencia (recibo de luz/agua)
+    * Documento de identidad (pasaporte)
+    * CPF
+* <b class="hidden-sm bg-info">[UPDATE (June 5, 2017)]</b> Ahora uno puede obtener dos tipos de cuentas corrientes, la normal y la de estudiante.
+* <b class="hidden-sm bg-info">[UPDATE (June 7, 2017)]</b> La cuenta de estudiante solo se puede obtener hasta los 28 años.
 
 ## Links importantes: <a id="links-importantes"></a>
 * Para moradas:
