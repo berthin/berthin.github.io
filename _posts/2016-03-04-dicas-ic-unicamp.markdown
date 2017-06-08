@@ -76,7 +76,7 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 ## Trámites de RNE y otros: <a id="tramites"></a>
 * Consultar la siguiente pagina: http://www.ukuko.com/. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
 
-## Miscelanea <a id="miscelania"></a>
+## Miscelanea: <a id="miscelanea"></a>
 ### Revalidacion de Diploma <a id="revalidacion-diploma"></a>
 * Revalidacion de diploma (Brasilero) en Peru. Actualmente, para trabajar en el sector publico en Peru es requerida la revalidacion de titulos-diplomas del exterior y este procedimiento lo realiza la SUNEDU. Los pasos para dicho procedimiento son:
     * En Brasil
