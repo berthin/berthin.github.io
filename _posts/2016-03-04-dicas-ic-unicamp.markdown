@@ -71,9 +71,24 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * No es válido suponer que todas los hospedajes vienen mobiliadas. Siempre es bueno preguntar.
 * Pago por adelantado. Algunos piden boletos bancarios por todo el periodo de alquiler, otros piden adelanto de X meses (en la mayoría de casos X>=2).
 * Es altamente recomendable conseguir un lugar para quedarse antes de llegar. No es fácil llegar a lo mochilero y luego pensar que con un par de horas buscando encontraran alojamiento.
-* Ver [links importantes](#links-importantes) para saber donde buscar alojamiento.
+* Ver <span class="label label-warning" style="font-size:small; font-weight:bold; background-color:#fee578"><a href="#links-importantes">links importantes</a></span> para saber donde buscar alojamiento.
 
 ## Trámites de RNE y otros: <a id="tramites"></a>
+### Registro Nacional de Extrangero (RNE)
+* TODO: Rodo is writing
+
+### Carteira de Trabalho (CTS)
+* En Brasil, como en cualquier otro pais, es necesario tener un documento para poder laborar. Dicho documento es llamado la "Carteira de Trabalho" y el proceso para obtenerlo es bien trivial y **gratis**.
+* Requisitos:
+    * CIE o Protocolo de la PF
+    * CPF
+    * Comprobante de residencia
+    * Agendar <span class="label label-info" style="font-size:small"><a href="http://saaweb.mte.gov.br/inter/saa/pages/agendamento/main.seam">AQUI</a></span>
+y seleccionar **carteira de trabalho para estrangeiro**
+* Mientras que el CIE / Protocolo pueden variar dependiendo del tipo de visa que tengan, el resto es importante.
+* El tramite se puede hacer en el Ministerio do Trabalho e Previdencia Social, y debe de ser ese sitio en especifico. Aunque cuando uno ya esta con Visa de Residente puede tramitar en la Fazenda, en general (para Mercosur) uno debe de apersonarse a esa instancia en especifico.
+* Algo muy importante mencionar es que el tiempo de entrega del documento varia de acuerdo a las localidades. Por ejemplo, en Sao Paulo (ciudad) me dijeron que demoraria 11 dias utiles, en Campinas (ciudad) me dijeron 7 dias, y en Piracicaba fue inmediato.  
+
 * Consultar la siguiente pagina: http://www.ukuko.com/. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
 
 ## Miscelanea: <a id="miscelanea"></a>
