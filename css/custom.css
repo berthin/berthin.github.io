@@ -1,0 +1,14 @@
+.box{
+  font-weight:bold;
+  font-size:small;
+  padding-left:1%;
+  padding-right:1%;
+  border: 2px solid;
+  border-radius:10%;
+}
+.box-yellow{
+  background-color:#fee578;
+}
+.box-blue{
+  background-color:rgb(179,226,221);
+}

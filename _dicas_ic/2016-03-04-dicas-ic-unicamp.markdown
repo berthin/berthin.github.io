@@ -138,51 +138,11 @@ El presente fue escrito con el único objetivo de ayudar a todas aquellas person
 * Ver <span class="box box-yellow"><a href="#links-importantes">links importantes</a></span> para saber donde buscar alojamiento.
 
 ## Trámites de RNE y otros: <a id="tramites"></a>
-<div class="alert alert-success">
-La siguiente pagina: <span class="box box-yellow"> <a href="http://www.ukuko.com/" target="_blank">UKUKO.com</a></span> Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc). Sin embargo, algunas detalles estan desactualizados por lo que se vio por conveniente desarrollarlos en el presente documento, pero no esta demas consultar dicha pagina como referencia adicional.
-</div>
-
 ### Registro Nacional de Extrangero (RNE) <a id="rne"></a>
-* Los requisitos oficiales se encuentran en este <span class="box box-blue"><a href="http://www.pf.gov.br/servicos-pf/estrangeiro/cedula-de-identidade-de-estrangeiro/registro-temporario-acordo-mercosul-e-associados">la pag. web de la PF</a></span>.
+* TODO: Rodo is writing
 
-    * ***Pasaporte original válido e cópias autenticadas das folhas utilizadas ou cédula de identidade válida para nacionais do MERCOSUL ou Certidão de nacionalidade expedida pelo consulado do estrangeiro no Brasil*** <br>
-    Este documento lo obtienes en Perú, en las oficinas de migraciones o en consulado Peruano en Brasil. En caso lo tramites en Peru (remendado), el trámite requiere pagar un monto en el Banco de la Nación y esperar unas horas. Las copias validadas las obtienes en un cartorio (una notaría brasileña), el costo dependerá  de la cantidad de hojas usadas en tu pasaporte
- 
-    * ***2 fotos 3x4, com fundo branco e sem adornos (óculos, chapéus)***
-    <br> Esto no debería ser complicado pero no está demás decir que las fotos 3x4 son las conocidas fotos tamaño pasaporte.
- 
-    * ***Certificado de inscrição consular (com nomes dos pais) ou outro documento válido com filiação***
-    <br> Se obtiene en los consulados (e.g. <a href="https://www.facebook.com/ConsuladoPeruEnSaoPaulo">Consulado de Peru en Sao Paulo</a>), el costo es de R$ XX, los requisitos son tu DNI y una fotos 3x4. El trámite es de un dia para otro.
- 
-    * ***Certidão de Distribuição da Justiça Federal ou Certidão de antecedentes criminais emitida pela Polícia Federal***
-    <br> Este trámite es <span class="box box-blue"> <a href="http://www.pf.gov.br/servicos-pf/antecedentes-criminais/emissao">online</a></span> y es necesario haber tramitado el CPF previamente. 
- 
-    * ***Certidão de Distribuição Criminal da Justiça Estadual OU Certidão de antecedentes criminais emitida pela Polícia Civil;***
-    <br> Este trámite es <span class="box box-blue"> <a href="http://www.stf.jus.br/portal/certidao/solicitarcertidao.asp">online</a></span> y es necesario haber tramitado el CPF previamente. 
- 
-	* ***Certidão de antecedentes criminais do País de origem ou dos países de residência nos 05 anos anteriores à entrada no Brasil***
- 	<br> Se obtiene en el consulado, el costo es de R$ 90,00. Debes de presentar tu DNI y una foto 3x4. El trámite es de un dia para otro.
-
-	* ***Cópia simples de comprovante de residência recente***
-	<br> Un recibo de agua, luz, o internet de algún amigo que ya viva en Brasil.
-
-	* ***Declaração de que não foi processado ou condenado criminalmente no Brasil ou no exterior, conforme modelo: <a href="http://www.pf.gov.br/servicos-pf/estrangeiro/cedula-de-identidade-de-estrangeiro/modelos/declaracao-ausencia-de-antecedentes-criminais.pdf">Modelo de declaração</a>***
-	<br> Solo es necesario llenar la plantilla que disponibilizaron.
-
-	* ***Se já possuiu registro de estrangeiro no Brasil, deverá apresentar a carteira anterior ou, em caso de perda, roubo ou furto, cópia autenticada do respectivo Boletim de Ocorrência***
-	<br> Llevar tu CIE anterior en caso de querer renovar.
-
-* Si bien es cierto que en la pagina de la PF los requisitos estan establecidos, los agentes tienen libertad de pedir mas documentos o ser mas estrictos con los mismos. Por ejemplo, algunos casos basta con llevar copias simples del pasaporte, mientras que en otros te pediran copia cartoriada. La diferencia? el costo.
-
-<div class="alert alert-success"><strong>Pro TIP:</strong> El primer requisito es llevar pasaporte o DNI. Mientras que por defecto la mayoria presentar pasaporte, tambien es valido DNI. Si su pasaporte tiene un monton de hojas con sellos, la copia en el cartorio les saldra ~R$ 70.00, en lugar de ello, para economizar pueden llevar una copia de su DNI. </div>
- 
 ### Cadastro de Pessoa Fisica (CPF) <a id="cpf"></a>
-* Este es un tramite que se puede realizar en la Receita Federal, y es bien simple. Solo es necesario llevar los siguientes documentos: 
-	* Comprobante de residencia.
-	* Pasaporte
-	* Algún documento que sustente que estarás en Brasil por un periodo considerable (eg. carta de aceptación de tu universidad).
-* Con esos documentos te diriges  a una oficina de correo y realizas el pago por el CPF, luego te diriges a una oficina de la Receita federal y obtienes tu CPF.
-* El trámite es de 1 hora aproximadamente.
+* TODO: Rodo is writing
 
 ### Carteira de Trabalho (CTPS) <a id="ctps"></a>
 * En Brasil, como en cualquier otro pais, es necesario tener un documento para poder laborar. Dicho documento es llamado la "Carteira de Trabalho" y el proceso para obtenerlo es bien trivial y **gratis**.
@@ -196,6 +156,7 @@ y seleccionar **carteira de trabalho para estrangeiro**
 * El tramite se puede hacer en el Ministerio do Trabalho e Previdencia Social, y debe de ser ese sitio en especifico. Aunque cuando uno ya esta con Visa de Residente puede tramitar en la Fazenda, en general (para Mercosur) uno debe de apersonarse a esa instancia en especifico.
 * Algo muy importante mencionar es que el tiempo de entrega del documento varia de acuerdo a las localidades. Por ejemplo, en Sao Paulo (ciudad) me dijeron que demoraria 11 dias utiles, en Campinas (ciudad) me dijeron 7 dias, y en Piracicaba fue inmediato.  
 
+* Consultar la siguiente pagina: <span class="box box-yellow"> <a href="http://www.ukuko.com/" target="_blank">UKUKO.com</a></span>. Contiene información a detalle sobre muchos procedimientos (trámite RNE, revalidación de visas, carteira de trabalho, etc).
 
 ## Miscelanea: <a id="miscelanea"></a>
 ### Revalidacion de Diploma <a id="revalidacion-diploma"></a>
