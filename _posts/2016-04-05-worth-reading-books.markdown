@@ -16,3 +16,21 @@ edit_link: 2016-04-05-worth-reading-books.markdown
 # How to write problems (programming competitions)
 
 * [Tips](https://plus.google.com/+LifeatGoogle/posts/CKq1WtyydRx)
+
+
+# MOOCs
+
+* [Coursera](https://www.coursera.org)
+* [EDx](http://edx.org/)
+* [Khan Academy](https://www.khanacademy.org/)
+* [Future Learn](https://www.futurelearn.com/)
+* [List of MOOCs](https://www.mooc-list.com/)
+
+# Progamming Stuff for Training
+* [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/)
+* [CodeForces](http://codeforces.com/)
+* [CodeFights](https://codefights.com/)
+* [HackerEarth](https://www.hackerearth.com/)
+* [HackerRank](https://www.hackerrank.com/)
+* [LeetCode](https://leetcode.com/)
+* [InterviewBit](https://www.interviewbit.com/)
