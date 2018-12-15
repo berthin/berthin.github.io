@@ -242,3 +242,5 @@ y seleccionar **carteira de trabalho para estrangeiro**
   * [Grupo Fb IC en Español](https://www.facebook.com/groups/482184358537768/)
 * Acceso a software por convenio UNICAMP-Microsoft
   * [Only for IC, FEEC](https://lms.lab.ic.unicamp.br/)
+* Modelos de documentos para traducciones:
+  * [Portugues a Ingles](http://www.ufpb.br/aai/contents/documentos/modelos-de-traducao)
