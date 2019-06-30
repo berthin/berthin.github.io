@@ -227,6 +227,9 @@ y seleccionar **carteira de trabalho para estrangeiro**
     * CPF
 * <b class="hidden-sm bg-info">[UPDATE (June 5, 2017)]</b> Ahora uno puede obtener dos tipos de cuentas corrientes, la normal y la de estudiante.
 * <b class="hidden-sm bg-info">[UPDATE (June 7, 2017)]</b> La cuenta de estudiante solo se puede obtener hasta los 28 años.
+* <b class="hidden-sm bg-info">[UPDATE (June 8, 2017)]</b> La carta del IC de bolsa y carta de aceptación de la UNICAMP/carterinha pueden ser reemplazadas por solo una de ellas, dependiendo del documento que presentes podras crear un tipo de cuenta diferente. la carta de bolsa te permite tener una cuenta corriente mientra que el resto una cuenta de estudiante. Los beneficios de la cuenta corriente en comparación a la de estudiante son pocos.
+* <b class="hidden-sm bg-info">[UPDATE (June 8, 2017)]</b> Junto al documento de residencia se debe presentar una declaración de residencia firmada por el titular del recibo de agua/luz, si el recibo esta a tu nombre, esta declaración no es necesaria. Existen formatos de la declaración en la [web](http://modelosprontos.com/wp-content/uploads/2016/08/Modelo-de-declaracao-de-residencia-para-terceiro.pdf) y se tiene que legalizar el documento en el cartorio.
+
 
 ## Links importantes: <a id="links-importantes"></a>
 * Para moradas:
