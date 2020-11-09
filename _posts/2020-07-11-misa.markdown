@@ -3,7 +3,6 @@ layout: default
 title:  "Misa"
 date:   2020-07-11 17:27:13 +0100
 categories: internal
-permalink: /misa
 ---
 
 <img src="extra/invitacion/invitacion-banner.png" alt="Invitacion a misa" width="1000">
