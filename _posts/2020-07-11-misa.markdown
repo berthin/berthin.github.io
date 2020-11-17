@@ -55,14 +55,15 @@ var x = setInterval(function() {
 
 <ul>
 <li>
-    <h5>En caso de cualquier problema, intente actualizar esta p<span>&#xe1;</span>gina o ingrese a la transmicion en facebook de la <a href="https://www.facebook.com/cristoperegrino.cusco">Parroquia Cristo Peregrino</a> de Cusco</h5>
+    <h4><b>En caso de cualquier problema, por favor ingrese a la transmicion en facebook de la <a href="https://www.facebook.com/cristoperegrino.cusco">Parroquia Cristo Peregrino</a> de Cusco</b></h4>
 </li>
 <li>
-    <h5>Para participar de la reunion, por favor ingrese a <a href="http://berthin.nl/zoom"> berthin.nl/zoom </a> o presione en el siguiente icono: </h5>
+    <h4>Para participar de la reunion, por favor ingrese a <a href="http://berthin.nl/zoom"> berthin.nl/zoom </a> o presione en el siguiente icono: </h4>
     <p>
     <a href="https://marvell.zoom.us/j/7421138172?pwd=YWRnekx5TDdIMER1MmZRdEV2UzFrZz09">
     <img border="0" alt="ZOOM" src="extra/invitacion/zoom.png" width="100" height="100">
     </a>
     </p>
+    <!--Por si les pide password, la clave es: 1234-->
 </li>
 </ul>
