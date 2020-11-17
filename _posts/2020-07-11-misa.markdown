@@ -11,6 +11,8 @@ permalink: /misa
 <h4> <p> La misa se transmitir<span>&#xe1;</span> mendiante este medio, seguidamente se habilitar<span>&#xe1;</span> un link para tener una reunion via  <a href="https://zoom.us/download#client_4meeting">ZOOM</a>.
 Se les pide por favor tener instalado el aplicativo.
 </p> </h4>
+
+
 <h4>La misa comenzar<span>&#xe1;</span> en: </h4>
 <h3 style="text-align: center"><p id="demo"></p></h3>
 
@@ -51,8 +53,16 @@ var x = setInterval(function() {
 
 <!--<div class="fb-video" data-href="https://www.facebook.com/watch/?v=692276298392711" data-show-text="false" data-width=""><blockquote cite="https://developers.facebook.com/ChelseaFC/videos/692276298392711/" class="fb-xfbml-parse-ignore"><a href="https://developers.facebook.com/ChelseaFC/videos/692276298392711/">Matchday Live - Chelsea v Sheffield Utd!</a><p>All the build-up, including live team news for Chelsea v Sheffield Utd! 🔵</p>Posted by <a href="https://www.facebook.com/ChelseaFC/">Chelsea Football Club</a> on Saturday, November 7, 2020</blockquote></div>-->
 
-<p>
-Link para la reunion ZOOM: <a href="https://marvell.zoom.us/j/7421138172?pwd=YWRnekx5TDdIMER1MmZRdEV2UzFrZz09">
-<img border="0" alt="ZOOM" src="extra/invitacion/zoom.png" width="100" height="100">
-</a>
-</p>
+<ul>
+<li>
+    <h5>En caso de cualquier problema, intente actualizar esta p<span>&#xe1;</span>gina o ingrese a la transmicion en facebook de la <a href="https://www.facebook.com/cristoperegrino.cusco">Parroquia Cristo Peregrino</a> de Cusco</h5>
+</li>
+<li>
+    <h5>Para participar de la reunion, por favor ingrese a <a href="http://berthin.nl/zoom"> berthin.nl/zoom </a> o presione en el siguiente icono: </h5>
+    <p>
+    <a href="https://marvell.zoom.us/j/7421138172?pwd=YWRnekx5TDdIMER1MmZRdEV2UzFrZz09">
+    <img border="0" alt="ZOOM" src="extra/invitacion/zoom.png" width="100" height="100">
+    </a>
+    </p>
+</li>
+</ul>

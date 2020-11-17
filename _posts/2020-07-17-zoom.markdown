@@ -1,0 +1,9 @@
+---
+layout:    redirect
+title:  "Reunion Zoom"
+date:   2020-07-17 17:27:13 +0100
+categories: internal
+permalink: /zoom
+redirect: https://marvell.zoom.us/j/7421138172?pwd=YWRnekx5TDdIMER1MmZRdEV2UzFrZz09
+---
+
